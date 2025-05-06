@@ -14,7 +14,7 @@ num_ftrs = model.classifier[1].in_features
 model.classifier[1] = torch.nn.Linear(num_ftrs, 5)  # 5 output classes
 
 # Load model weights
-MODEL_PATH = r'D:\3rd year\6th sem\Intelligent systems\Project\Project\best_efficientNet_model.pth'
+MODEL_PATH = './models/best_efficientNet_model.pth'
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 state_dict = torch.load(MODEL_PATH, map_location=device)
 

@@ -42,10 +42,13 @@ function App() {
       formData.append("image", selectedFile);
 
       // Replace with your actual API endpoint
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/predict`, {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        `https://explainable-ai-chest-radiology-imaging.onrender.com/predict`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to process image");
